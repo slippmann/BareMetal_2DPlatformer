@@ -1,0 +1,48 @@
+#include "game_logic.h"
+
+static enum state currentState = MAIN;
+static u8 buttons;
+
+static void ControllerCallback(void * data);
+static void HandleButtons(void);
+
+void StartGame(void)
+{
+	SetControllerCallback(ControllerCallback);
+
+	//game loop
+	while (TRUE)
+	{
+		switch (currentState)
+		{
+			case MAIN:
+			{
+				HandleButtonsMain();
+			}
+			case PLAY:
+			{
+				HandleButtons();
+				//CheckForCollisions();
+			}
+			case PAUSE:
+			{
+
+			}
+		}
+	}
+}
+
+enum state GetCurrentState(void)
+{
+	return currentState;
+}
+
+void ControllerCallback(void * data)
+{
+	buttons = (u8) ((u32) data);
+}
+
+void HandleButtons(void)
+{
+
+}

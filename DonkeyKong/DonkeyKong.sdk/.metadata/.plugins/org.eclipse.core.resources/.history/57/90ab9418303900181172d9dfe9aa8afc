@@ -1,0 +1,1417 @@
+#include "game_logic.h"
+#include "game_menus.h"
+#include "math.h"
+
+/***********************Global Variables**********************/
+#ifdef DEBUG
+static enum state previousState = GAMEOVER;
+static u8 stepCount = 0;
+#endif /*DEBUG*/
+
+static int xVelocity = 0;
+static int yVelocity = 0;
+static int boneVelocityX = 0;
+static int boneVelocityY = 0;
+
+bool* isInGame = (bool *)SHARED_MEM_ADDR;
+
+static enum state currentState = MAIN;
+static u8 buttons = 0;
+static bool pause_exit = false;
+static bool isClimbing = false;
+static bool isJumping = false;
+static bool isOverTrap = false;
+static bool isDead = false;
+static bool isThrowing = false;
+static bool isInitialized = false;
+static bool isOver = false;
+static bool isStartThrowing = false;
+static u8 currentLevel = 0;
+static int startJumpY = 0;
+
+static u16 * frame = (u16 *)GAME_BASE_ADDR;
+
+static int gameTimeMs = 0;
+static u16 points = 0;
+static u8 lives = 3;
+
+/********************SPRITES**********************/
+static struct sprite frisk;
+
+static struct sprite platform_base;
+static struct sprite platform_lvl1;
+static struct sprite platform_lvl2;
+static struct sprite platform_lvl3;
+static struct sprite platform_lvl4;
+
+static struct sprite ladder_1;
+static struct sprite ladder_2;
+static struct sprite ladder_3;
+static struct sprite ladder_4;
+static struct sprite ladder_5;
+static struct sprite ladder_6;
+
+static struct sprite bonus_1;
+static struct sprite bonus_2;
+
+static struct sprite papyrus;
+static struct sprite sans;
+
+static struct sprite * traps[5][3];
+
+static struct sprite trap_fire_0;
+static struct sprite trap_fire_1;
+static struct sprite trap_fire_2;
+static struct sprite trap_saw_0;
+static struct sprite trap_saw_1;
+static struct sprite trap_spear_0;
+static struct sprite trap_spear_1;
+static struct sprite trap_spear_2;
+static struct sprite trap_spear_3;
+
+static struct sprite bone;
+
+struct image *frisk_still_img = (struct image *)FRISK_STILL_ADDR;
+struct image *frisk_ladder_img = (struct image *)FRISK_LADDER_ADDR;
+struct image *frisk_left_0_img = (struct image *)FRISK_LEFT_0_ADDR;
+struct image *frisk_left_1_img = (struct image *)FRISK_LEFT_1_ADDR;
+struct image *frisk_right_0_img = (struct image *)FRISK_RIGHT_0_ADDR;
+struct image *frisk_right_1_img = (struct image *)FRISK_RIGHT_1_ADDR;
+
+struct image *platform_base_img = (struct image *)PLATFORM_BASE_ADDR;
+struct image *platform_lvl_img = (struct image *)PLATFORM_LVL_ADDR;
+
+struct image *ladder_img = (struct image *)LADDER_ADDR;
+struct image *bonus_img = (struct image *)BONUS_ADDR;
+struct image *fire_0_img = (struct image *)FIRE_0_ADDR;
+struct image *fire_1_img = (struct image *)FIRE_1_ADDR;
+struct image *spear_img = (struct image *)SPEAR_ADDR;
+struct image *saw_img = (struct image *)SAW_ADDR;
+
+struct image *papyrus_still_img = (struct image *)PAPYRUS_STILL_ADDR;
+struct image *sans_still_img = (struct image *)SANS_STILL_ADDR;
+
+struct image *bone_left = (struct image *)BONE_LEFT_ADDR;
+struct image *bone_right = (struct image *)BONE_RIGHT_ADDR;
+struct image *bone_horiz = (struct image *)BONE_HORIZONTAL_ADDR;
+struct image *bone_vert = (struct image *)BONE_VERTICAL_ADDR;
+
+struct image * current_left;
+struct image * current_right;
+
+/***********************Prototypes*****************************/
+static void ControllerCallback(void * data);
+static void HandleButtons(void);
+
+static void InitSprites(void);
+static void InitPlatforms(void);
+static void InitLadders(void);
+static void InitCharacters(void);
+static void InitBonus(void);
+static void InitTraps(void);
+static void InitBone(void);
+
+static void InitialDialog(void);
+static void FinalDialog(void);
+
+static void ResetGame(bool isFullReset);
+static void Update(int time);
+static void UpdateSprites(void * param);
+
+static void DrawGameScene(void);
+static void DrawScore(void);
+static void DrawLives(void);
+
+static void Move(enum direction dir);
+static void Climb(enum direction dir);
+static void Jump();
+static void Grab();
+static void ThrowBone();
+static void LoseLife();
+
+//static void MobGeneration();
+static void CheckCollision();
+static void CheckJump();
+static bool AABBOverlap(struct sprite test);
+
+
+void StartGame(void)
+{
+	SetControllerCallback(ControllerCallback);
+
+	InitSprites(); //initializes frisk sprite
+
+	DisplaySplashScreen(frame);
+
+	DisplayMainMenu(); //main menu background
+
+	//game loop
+	while (true)
+	{
+#ifdef DEBUG
+		if (currentState != previousState)
+		{
+			switch (currentState)
+			{
+				case MAIN:
+				{
+					xil_printf("=====Main Menu=====\r\nPress start to play...\r\n");
+					break;
+				}
+				case PLAY:
+				{
+					if(previousState == MAIN)
+					{
+						xil_printf("=====Game Started=====\r\n");
+					}
+
+					else
+						xil_printf("Continuing...\r\n");
+					break;
+				}
+				case PAUSE:
+				{
+					xil_printf("Paused...\r\n");
+					break;
+				}
+				case GAMEOVER:
+				{
+					xil_printf("=====Game Over=====\r\nPress Start to play again...\r\n");
+					break;
+				}
+				default:
+					xil_printf("Invalid State...\r\n");
+					break;
+			}
+
+			previousState = currentState;
+		}
+#endif /*DEBUG*/
+
+		StartStopWatch();
+
+		HandleButtons();
+
+		if(currentState == PLAY)
+		{
+			*isInGame = true;
+
+			DrawGameScene();
+			DrawScore();
+			DrawLives();
+
+			UpdateScreen(frame);
+
+			Update(gameTimeMs);
+
+			if (!isDead)
+			{
+				//CheckCollision();
+
+				CheckJump();
+			}
+
+			if (isStartThrowing && isThrowing == false)
+			{
+				ThrowBone();
+			}
+		}
+		else
+		{
+			*isInGame = false;
+		}
+
+		usleep(20000);
+
+		gameTimeMs = StopStopWatch();
+	}
+}
+
+void InitSprites(void)
+{
+	InitPlatforms();
+	InitLadders();
+	InitCharacters();
+	InitBonus();
+	InitTraps();
+}
+
+void InitPlatforms()
+{
+	platform_base.img = platform_base_img;
+	platform_base.dim.width = 640;
+	platform_base.dim.height = 32;
+	platform_base.pos.x = 0;
+	platform_base.pos.y = 480 - platform_base.dim.height;
+	platform_base.type = PLATFORM;
+
+	platform_lvl1.img = platform_lvl_img;
+	platform_lvl1.dim.width = 576;
+	platform_lvl1.dim.height = 16;
+	platform_lvl1.pos.x = (640 - platform_lvl1.dim.width) / 2;
+	platform_lvl1.pos.y = 480 - platform_base.dim.height - 1*(64 + platform_lvl1.dim.height);
+	platform_lvl1.type = PLATFORM;
+
+	platform_lvl2.img = platform_lvl_img;
+	platform_lvl2.dim.width = 576;
+	platform_lvl2.dim.height = 16;
+	platform_lvl2.pos.x = (640 - platform_lvl2.dim.width) / 2;
+	platform_lvl2.pos.y = 480 - platform_base.dim.height - 2*(64 + platform_lvl2.dim.height);
+	platform_lvl2.type = PLATFORM;
+
+	platform_lvl3.img = platform_lvl_img;
+	platform_lvl3.dim.width = 576;
+	platform_lvl3.dim.height = 16;
+	platform_lvl3.pos.x = (640 - platform_lvl3.dim.width) / 2;
+	platform_lvl3.pos.y = 480 - platform_base.dim.height - 3*(64 + platform_lvl3.dim.height);
+	platform_lvl3.type = PLATFORM;
+
+	platform_lvl4.img = platform_lvl_img;
+	platform_lvl4.dim.width = 576;
+	platform_lvl4.dim.height = 16;
+	platform_lvl4.pos.x = (640 - platform_lvl4.dim.width) / 2;
+	platform_lvl4.pos.y = 480 - platform_base.dim.height - 4*(64 + platform_lvl4.dim.height);
+	platform_lvl4.type = PLATFORM;
+}
+
+void InitLadders()
+{
+	ladder_1.img = ladder_img;
+	ladder_1.dim.width = 24;
+	ladder_1.dim.height = 84;
+	ladder_1.pos.x = 640 - platform_lvl1.pos.x - ladder_1.dim.width*2;
+	ladder_1.pos.y = platform_lvl1.pos.y - 4;
+	ladder_1.type = LADDER;
+
+	ladder_2.img = ladder_img;
+	ladder_2.dim.width = 24;
+	ladder_2.dim.height = 84;
+	ladder_2.pos.x = 640/2 - ladder_2.dim.width*2;
+	ladder_2.pos.y = platform_lvl2.pos.y - 4;
+	ladder_2.type = LADDER;
+
+	ladder_3.img = ladder_img;
+	ladder_3.dim.width = 24;
+	ladder_3.dim.height = 64;
+	ladder_3.pos.x = platform_lvl3.pos.x + ladder_3.dim.width;
+	ladder_3.pos.y = platform_lvl3.pos.y - 4;
+	ladder_3.type = LADDER;
+
+	ladder_4.img = ladder_img;
+	ladder_4.dim.width = 24;
+	ladder_4.dim.height = 64;
+	ladder_4.pos.x = platform_lvl4.pos.x + platform_lvl4.dim.width - ladder_4.dim.width - 4;
+	ladder_4.pos.y = platform_lvl4.pos.y - 4;
+	ladder_4.type = LADDER;
+
+	ladder_5.img = ladder_img;
+	ladder_5.dim.width = 24;
+	ladder_5.dim.height = 64;
+	ladder_5.pos.x = platform_lvl4.pos.x + ladder_5.dim.width;
+	ladder_5.pos.y = platform_lvl4.pos.y - ladder_5.dim.height;
+	ladder_5.type = LADDER;
+
+	ladder_6.img = ladder_img;
+	ladder_6.dim.width = 24;
+	ladder_6.dim.height = 64;
+	ladder_6.pos.x = platform_lvl4.pos.x + ladder_6.dim.width;
+	ladder_6.pos.y = platform_lvl4.pos.y - ladder_6.dim.height * 2;
+	ladder_6.type = LADDER;
+}
+
+void InitCharacters()
+{
+	frisk.img = frisk_still_img;
+	frisk.dim.width = 22;
+	frisk.dim.height = 32;
+	frisk.pos.x = 0;
+	frisk.pos.y = platform_base.pos.y - frisk.dim.height;
+	frisk.type = CHAR;
+	current_left = frisk_left_0_img;
+	current_right = frisk_right_0_img;
+
+	sans.img = sans_still_img;
+	sans.dim.width = 24;
+	sans.dim.height = 32;
+	sans.pos.x = 80;
+	sans.pos.y = platform_base.pos.y - sans.dim.height;
+	sans.type = CHAR;
+
+	papyrus.img = papyrus_still_img;
+	papyrus.dim.width = 26;
+	papyrus.dim.height = 42;
+	papyrus.pos.x = 100;
+	papyrus.pos.y = platform_lvl4.pos.y - papyrus.dim.height;
+	papyrus.type = CHAR;
+}
+
+void InitBonus()
+{
+	bonus_1.img = bonus_img;
+	bonus_1.dim.width = 18;
+	bonus_1.dim.height = 12;
+	bonus_1.pos.x = platform_lvl1.pos.x;
+	bonus_1.pos.y = platform_lvl1.pos.y - bonus_1.dim.height;
+	bonus_1.type = BONUS;
+
+
+	bonus_2.img = bonus_img;
+	bonus_2.dim.width = 18;
+	bonus_2.dim.height = 12;
+	bonus_2.pos.x = platform_lvl2.pos.x + platform_lvl2.dim.width - (bonus_2.dim.width);
+	bonus_2.pos.y = platform_lvl2.pos.y - bonus_2.dim.height;
+	bonus_2.type = BONUS;
+}
+
+void InitTraps()
+{
+	//========= level 0 traps ==========
+	trap_spear_0.img = spear_img;
+	trap_spear_0.dim.width = 22;
+	trap_spear_0.dim.height = 18;
+	trap_spear_0.pos.x = platform_base.pos.x + platform_base.dim.width/2;
+	trap_spear_0.pos.y = platform_base.pos.y - trap_spear_0.dim.height;
+	trap_spear_0.type = MOB;
+
+	traps[0][0] = &trap_spear_0;
+	traps[0][1] = NULL;
+	traps[0][2] = NULL;
+
+	//========= level 1 traps ==========
+	trap_fire_0.img = fire_0_img;
+	trap_fire_0.dim.width = 10;
+	trap_fire_0.dim.height = 18;
+	trap_fire_0.pos.x = 640/2 + trap_fire_0.dim.width;
+	trap_fire_0.pos.y = platform_lvl1.pos.y - trap_fire_0.dim.height;
+	trap_fire_0.type = MOB;
+
+	trap_saw_0.img = saw_img;
+	trap_saw_0.dim.width = 22;
+	trap_saw_0.dim.height = 18;
+	trap_saw_0.pos.x = platform_lvl1.pos.x + trap_saw_0.dim.width * 2;
+	trap_saw_0.pos.y = platform_lvl1.pos.y - trap_fire_0.dim.height;
+	trap_saw_0.type = MOB;
+
+	traps[1][0] = &trap_fire_0;
+	traps[1][1] = &trap_saw_0;
+	traps[1][2] = NULL;
+
+	//========= level 2 traps ==========
+	trap_fire_1.img = fire_0_img;
+	trap_fire_1.dim.width = 10;
+	trap_fire_1.dim.height = 18;
+	trap_fire_1.pos.x = platform_lvl2.pos.x*2 + trap_fire_1.dim.width*3;
+	trap_fire_1.pos.y = platform_lvl2.pos.y - trap_fire_1.dim.height;
+	trap_fire_1.type = MOB;
+
+	trap_spear_1.img = spear_img;
+	trap_spear_1.dim.width = 22;
+	trap_spear_1.dim.height = 18;
+	trap_spear_1.pos.x = platform_lvl2.pos.x + platform_lvl2.dim.width - trap_spear_1.dim.width * 3;
+	trap_spear_1.pos.y = platform_lvl2.pos.y - trap_spear_1.dim.height;
+	trap_spear_1.type = MOB;
+
+	traps[2][0] = &trap_fire_1;
+	traps[2][1] = &trap_spear_1;
+	traps[2][2] = NULL;
+
+	//========= level 3 traps ==========
+	trap_saw_1.img = saw_img;
+	trap_saw_1.dim.width = 22;
+	trap_saw_1.dim.height = 18;
+	trap_saw_1.pos.x = platform_lvl3.pos.x + platform_lvl3.dim.width / 4 + trap_saw_1.dim.width;
+	trap_saw_1.pos.y = platform_lvl3.pos.y - trap_saw_1.dim.height;
+	trap_saw_1.type = MOB;
+
+	trap_spear_2.img = spear_img;
+	trap_spear_2.dim.width = 22;
+	trap_spear_2.dim.height = 18;
+	trap_spear_2.pos.x = platform_lvl3.pos.x + platform_lvl3.dim.width / 2 + trap_spear_2.dim.width;
+	trap_spear_2.pos.y = platform_lvl3.pos.y - trap_spear_2.dim.height;
+	trap_spear_2.type = MOB;
+
+	traps[3][0] = &trap_saw_1;
+	traps[3][1] = &trap_spear_2;
+	traps[3][2] = NULL;
+
+	//========= level 4 traps ==========
+	trap_fire_2.img = spear_img;
+	trap_fire_2.dim.width = 22;
+	trap_fire_2.dim.height = 18;
+	trap_fire_2.pos.x = platform_lvl4.pos.x + platform_lvl4.dim.width * (1.0 / 2.0) + trap_fire_2.dim.width;
+	trap_fire_2.pos.y = platform_lvl4.pos.y - trap_fire_2.dim.height;
+	trap_fire_2.type = MOB;
+
+	trap_spear_3.img = spear_img;
+	trap_spear_3.dim.width = 22;
+	trap_spear_3.dim.height = 18;
+	trap_spear_3.pos.x = platform_lvl4.pos.x + platform_lvl4.dim.width * (3.0 / 4.0) + trap_spear_3.dim.width;
+	trap_spear_3.pos.y = platform_lvl4.pos.y - trap_spear_3.dim.height;
+	trap_spear_3.type = MOB;
+
+	traps[4][0] = &trap_fire_2;
+	traps[4][1] = &trap_spear_3;
+	traps[4][2] = NULL;
+}
+
+void InitBone()
+{
+	bone.img = bone_left;
+	bone.dim.width = 14;
+	bone.dim.height = 14;
+	bone.pos.x = papyrus.pos.x;
+	bone.pos.y = papyrus.pos.y + papyrus.dim.height/2;
+	bone.type = MOB;
+}
+
+void InitialDialog(void)
+{
+	struct image * game_background;
+	game_background = (struct image *) GAME_BACKGROUND;
+
+	struct sprite sans_text;
+	sans_text.img = (struct image *)SANS_DIALOG_0_ADDR;
+	sans_text.pos.x = sans.pos.x + sans.dim.width + 6;
+	sans_text.pos.y = sans.pos.y - sans.dim.height;
+
+	struct sprite papyrus_text;
+	papyrus_text.img = (struct image *) PAPYRUS_DIALOG_0_ADDR;
+	papyrus_text.pos.x = papyrus.pos.x + papyrus.dim.width + 6;
+	papyrus_text.pos.y = papyrus.pos.y - papyrus.dim.height;
+
+	for (int i = 0; i < 5; i++)
+	{
+		DrawImage(frame, sans_text.img, sans_text.pos.x, sans_text.pos.y);
+		UpdateScreen(frame);
+
+		while (!(buttons & A_MASK));
+		while (buttons & A_MASK);
+
+		sans_text.img = (i == 4) ? sans_text.img : (struct image *)((u32)sans_text.img + (sans_text.img->height * sans_text.img->width * 2) + IMG_HEADER_LEN);
+	}
+
+	EraseImage(frame, game_background, sans_text.img, sans_text.pos.x, sans_text.pos.y);
+	UpdateScreen(frame);
+
+	for (int i = 0; i < 5; i++)
+	{
+		DrawImage(frame, papyrus_text.img, papyrus_text.pos.x, papyrus_text.pos.y);
+		UpdateScreen(frame);
+
+		while (!(buttons & A_MASK));
+		while (buttons & A_MASK);
+
+		papyrus_text.img = (i == 4) ? papyrus_text.img : (struct image *)((u32)papyrus_text.img + (papyrus_text.img->height * papyrus_text.img->width * 2) + IMG_HEADER_LEN);
+	}
+
+	EraseImage(frame, game_background, papyrus_text.img, papyrus_text.pos.x, papyrus_text.pos.y);
+	UpdateScreen(frame);
+}
+
+void FinalDialog()
+{
+	struct image * game_background;
+	game_background = (struct image *) GAME_BACKGROUND;
+
+	struct sprite papyrus_text;
+	papyrus_text.img = (struct image *) PAPYRUS_END_DIALOG_0_ADDR;
+	papyrus_text.pos.x = papyrus.pos.x + papyrus.dim.width + 6;
+	papyrus_text.pos.y = papyrus.pos.y - papyrus.dim.height;
+
+	for (int i = 0; i < 7; i++)
+	{
+		DrawImage(frame, papyrus_text.img, papyrus_text.pos.x,
+				papyrus_text.pos.y);
+		UpdateScreen(frame);
+
+		while (!(buttons & A_MASK));
+		while (buttons & A_MASK);
+
+		papyrus_text.img = (i == 6) ? papyrus_text.img : (struct image *) ((u32) papyrus_text.img + (papyrus_text.img->height * papyrus_text.img->width * 2) + IMG_HEADER_LEN);
+	}
+
+	EraseImage(frame, game_background, papyrus_text.img, papyrus_text.pos.x, papyrus_text.pos.y);
+	UpdateScreen(frame);
+}
+
+void ResetGame(bool isFullReset)
+{
+	if (isFullReset)
+	{
+		isInitialized = false;
+		isStartThrowing = false;
+		lives = 3;
+	}
+	else
+	{
+		isStartThrowing = true;
+	}
+
+	isOver = false;
+	isJumping = false;
+	isOverTrap = false;
+	isThrowing = false;
+	points = 0;
+
+	InitBone();
+	InitCharacters();
+	InitBonus();
+
+	StartTimer(UPDATE_TIME, true, UpdateSprites);
+}
+
+void Update(int time)
+{
+	int t = ((float)time / 30);
+	frisk.pos.x += xVelocity * t;
+
+	if (isDead || isJumping)
+	{
+		frisk.pos.y += yVelocity * t;
+
+		yVelocity += GRAVITY * t;
+
+		if (isDead && frisk.pos.y >= FRAME_HEIGHT + 100)
+		{
+			isDead = false;
+
+			if (lives == 0)
+			{
+				currentState = GAMEOVER;
+				DisplayGameOver();
+			}
+
+			ResetGame(lives == 0);
+
+			return;
+		}
+		else if (isJumping && frisk.pos.y >= startJumpY)
+		{
+			frisk.pos.y = startJumpY;
+			isJumping = false;
+			yVelocity = 0;
+		}
+	}
+
+	if (isThrowing)
+	{
+		bone.pos.x += boneVelocityX * t;
+		bone.pos.y += boneVelocityY * t;
+
+		if (bone.pos.x > 640 || bone.pos.y > 480 || bone.pos.x < 0 || bone.pos.y < 0)
+		{
+			isThrowing = false;
+			boneVelocityX = 0;
+			boneVelocityY = 0;
+			bone.pos.x = papyrus.pos.x;
+			bone.pos.y = papyrus.pos.y + papyrus.dim.height/2;
+		}
+	}
+
+	if(!isInitialized && AABBOverlap(sans))
+	{
+		InitialDialog();
+		isInitialized = true;
+	}
+
+	if (frisk.pos.x > sans.pos.x + sans.dim.width)
+	{
+		isStartThrowing = true;
+	}
+
+	if(frisk.pos.y < platform_lvl4.pos.y)
+		currentLevel = 4;
+	else if (frisk.pos.y < platform_lvl3.pos.y)
+		currentLevel = 3;
+	else if (frisk.pos.y < platform_lvl2.pos.y)
+		currentLevel = 2;
+	else if (frisk.pos.y < platform_lvl1.pos.y)
+		currentLevel = 1;
+	else
+		currentLevel = 0;
+
+	if(!isOver && AABBOverlap(papyrus))
+	{
+		bone.type = DEAD;
+		isOver = true;
+		FinalDialog();
+	}
+
+	if(frisk.pos.y <= -frisk.dim.height)
+	{
+		currentState = WIN;
+		DisplayWinGame(points);
+	}
+}
+
+void UpdateSprites(void * param)
+{
+	trap_fire_0.img = trap_fire_0.img == fire_0_img ? fire_1_img : fire_0_img;
+	trap_fire_1.img = trap_fire_1.img == fire_0_img ? fire_1_img : fire_0_img;
+	trap_fire_2.img = trap_fire_2.img == fire_0_img ? fire_1_img : fire_0_img;
+
+	if (isThrowing)
+	{
+		if (bone.img == bone_left)
+			bone.img = bone_vert;
+		else if (bone.img == bone_vert)
+			bone.img = bone_right;
+		else if (bone.img == bone_right)
+			bone.img = bone_horiz;
+		else if (bone.img == bone_horiz)
+			bone.img = bone_left;
+	}
+}
+
+void ControllerCallback(void * data)
+{
+	buttons = (u8) ((u32) data);
+}
+
+void HandleButtons(void)
+{
+	switch (currentState)
+	{
+		case MAIN:
+		{
+			UpdateMainMenu();
+			
+			if(buttons & START_MASK)
+			{
+				ResetGame(true);
+
+				currentState = PLAY;
+
+				// wait until start is released
+				while(buttons & START_MASK);
+
+				DrawGameScene();
+			}
+			break;
+		}
+		case PLAY:
+		{
+			if(isDead)
+				return;
+
+			if (buttons & START_MASK)
+			{
+				currentState = PAUSE;
+				pause_exit = false;
+				DisplayPauseMenu(points, CONTINUE);
+
+				// wait until start is released
+				while(buttons & START_MASK);
+			}
+
+			if(buttons & UP_MASK)
+			{
+				Climb(UP);
+				xil_printf("Climbing up!\r\n");
+			}
+			else if (buttons & DOWN_MASK)
+			{
+				Climb(DOWN);
+				xil_printf("Climbing down!\r\n");
+			}
+			else if (buttons & LEFT_MASK)
+			{
+				Move(LEFT);
+				xil_printf("frisk(%d, %d)\r\n", frisk.pos.x, frisk.pos.y);
+			}
+			else if (buttons & RIGHT_MASK)
+			{
+				Move(RIGHT);
+				xil_printf("frisk(%d, %d)\r\n", frisk.pos.x, frisk.pos.y);
+			}
+			else
+			{
+				Move(NONE);
+			}
+
+			if(buttons & A_MASK)
+			{
+				Jump();
+				xil_printf("Jump!\r\n");
+			}
+			else if (buttons & B_MASK)
+			{
+				Grab();
+			}
+			break;
+		}
+		case PAUSE:
+		{
+			if (buttons & START_MASK || buttons & B_MASK)
+			{
+				currentState = PLAY;
+
+				// wait until start is released
+				while(buttons & START_MASK || buttons & B_MASK);
+
+				DrawGameScene();
+			}
+			else if (buttons & A_MASK)
+			{
+				// wait until start is released
+				while(buttons & A_MASK);
+
+				if(pause_exit == false)
+				{
+					currentState = PLAY;
+					DrawGameScene();
+				}
+				else
+				{
+					ResetGame(true);
+					currentState = MAIN;
+					DisplayMainMenu();
+				}
+			}
+			else if(buttons & RIGHT_MASK || buttons & LEFT_MASK)
+			{
+				if(buttons & RIGHT_MASK)
+				{
+					DisplayPauseMenu(points, EXIT);
+
+					pause_exit = true;
+				}
+				else if (buttons & LEFT_MASK)
+				{
+					DisplayPauseMenu(points, CONTINUE);
+
+					pause_exit = false;
+				}
+			}
+
+			break;
+		}
+		case GAMEOVER:
+		{
+			UpdateGameOver();
+			if (buttons & START_MASK)
+			{
+				currentState = MAIN;
+				DisplayMainMenu();
+
+				// wait until start is released
+				while(buttons & START_MASK);
+			}
+			break;
+		}
+		case WIN:
+		{
+			UpdateWinGame();
+			if (buttons & START_MASK)
+			{
+				currentState = MAIN;
+				DisplayMainMenu();
+
+				// wait until start is released
+				while (buttons & START_MASK);
+			}
+			break;
+		}
+		default:
+			break;
+	}
+}
+
+void DrawGameScene(void)
+{
+	//set up background
+	struct image * game_background;
+	game_background = (struct image *) GAME_BACKGROUND;
+	DrawImage(frame, game_background, 0, 0);
+
+	//set up platforms
+	DrawImage(frame, platform_base.img, platform_base.pos.x, platform_base.pos.y);
+	DrawImage(frame, platform_lvl1.img, platform_lvl1.pos.x, platform_lvl1.pos.y);
+	DrawImage(frame, platform_lvl2.img, platform_lvl2.pos.x, platform_lvl2.pos.y);
+	DrawImage(frame, platform_lvl3.img, platform_lvl3.pos.x, platform_lvl3.pos.y);
+	DrawImage(frame, platform_lvl4.img, platform_lvl4.pos.x, platform_lvl4.pos.y);
+
+	//set up ladders
+	DrawImage(frame, ladder_1.img, ladder_1.pos.x, ladder_1.pos.y);
+	DrawImage(frame, ladder_2.img, ladder_2.pos.x, ladder_2.pos.y);
+	DrawImage(frame, ladder_3.img, ladder_3.pos.x, ladder_3.pos.y);
+	DrawImage(frame, ladder_4.img, ladder_4.pos.x, ladder_4.pos.y);
+	DrawImage(frame, ladder_5.img, ladder_5.pos.x, ladder_5.pos.y);
+	DrawImage(frame, ladder_6.img, ladder_6.pos.x, ladder_6.pos.y);
+
+	//set up bonus items
+	if (bonus_1.type != DEAD)
+		DrawImage(frame, bonus_1.img, bonus_1.pos.x, bonus_1.pos.y);
+	if (bonus_2.type != DEAD)
+		DrawImage(frame, bonus_2.img, bonus_2.pos.x, bonus_2.pos.y);
+
+	//set up traps
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			DrawImage(frame, traps[i][j]->img, traps[i][j]->pos.x, traps[i][j]->pos.y);
+		}
+	}
+
+	//set up sans and papyrus
+	DrawImage(frame, sans.img, sans.pos.x, sans.pos.y);
+	DrawImage(frame, papyrus.img, papyrus.pos.x, papyrus.pos.y);
+
+	//set up bone
+	if(bone.type != DEAD)
+		DrawImage(frame, bone.img, bone.pos.x, bone.pos.y);
+
+	//set up frisk
+	DrawImage(frame, frisk.img, frisk.pos.x, frisk.pos.y);
+
+	//dirty workaround
+	EraseSection(frame, game_background, ladder_6.pos.x, 10, 18, ladder_6.dim.width);
+}
+
+void DrawScore(void)
+{
+	DrawNumber(frame, points, 110, 10);
+}
+
+void DrawLives(void)
+{
+	struct image * heart = (struct image *)HEART_ADDR;
+	u16 x_pos = FRAME_WIDTH - heart->width - 10;
+
+	for (int i = 0; i < lives; i++)
+	{
+		DrawImage(frame, heart, x_pos, 10);
+		x_pos -= 24;
+	}
+}
+
+static void Move(enum direction dir)
+{
+	if (dir == LEFT)
+	{
+		if (isClimbing && ((frisk.pos.y + frisk.dim.height) != (platform_base.pos.y || platform_lvl1.pos.y || platform_lvl2.pos.y || platform_lvl3.pos.y || platform_lvl4.pos.y)))
+		{
+			xVelocity = 0;
+		}
+
+		else if (frisk.pos.y >= platform_lvl1.pos.y)
+		{
+			if (frisk.pos.x <= 0)
+			{
+				frisk.pos.x = platform_base.pos.x;
+				frisk.img = frisk_still_img;
+			}
+
+			else
+			{
+				frisk.img = current_left;
+				xVelocity = -HORIZONTAL_VELOCITY;
+
+				stepCount++;
+
+				if(stepCount == 2)
+				{
+					current_left =  current_left == frisk_left_0_img ? frisk_left_1_img : frisk_left_0_img;
+					stepCount = 0;
+				}
+			}
+		}
+
+		else
+		{
+			if (frisk.pos.x <= platform_lvl1.pos.x)
+			{
+				frisk.pos.x = platform_lvl1.pos.x;
+				frisk.img = frisk_still_img;
+			}
+
+			else
+			{
+				frisk.img = current_left;
+				xVelocity = -HORIZONTAL_VELOCITY;
+
+				stepCount++;
+
+				if(stepCount == 2)
+				{
+					current_left =  current_left == frisk_left_0_img ? frisk_left_1_img : frisk_left_0_img;
+					stepCount = 0;
+				}
+			}
+
+		}
+	}
+
+	else if (dir == RIGHT)
+	{
+		if (isClimbing && ((frisk.pos.y + frisk.dim.height) != (platform_base.pos.y || platform_lvl1.pos.y || platform_lvl2.pos.y || platform_lvl3.pos.y || platform_lvl4.pos.y)))
+		{
+			xVelocity = 0;
+		}
+
+		else if (frisk.pos.y >= platform_lvl1.pos.y)
+		{
+			if(frisk.pos.x >= (640 - frisk.dim.width))
+			{
+				frisk.pos.x = 640 - frisk.dim.width;
+				frisk.img = frisk_still_img;
+				xVelocity = 0;
+			}
+
+			else
+			{
+				frisk.img = current_right;
+				xVelocity = HORIZONTAL_VELOCITY;
+
+				stepCount++;
+
+				if (stepCount == 2)
+				{
+					current_right = current_right == frisk_right_0_img ? frisk_right_1_img : frisk_right_0_img;
+					stepCount = 0;
+				}
+			}
+		}
+
+		else
+		{
+			if (frisk.pos.x >= (platform_lvl1.pos.x + platform_lvl1.dim.width - frisk.dim.height))
+			{
+				frisk.pos.x = platform_lvl1.pos.x + platform_lvl1.dim.width - frisk.dim.width;
+				frisk.img = frisk_still_img;
+				xVelocity = 0;
+			}
+
+			else
+			{
+				frisk.img = current_right;
+				xVelocity = HORIZONTAL_VELOCITY;
+
+				stepCount++;
+
+				if (stepCount == 2)
+				{
+					current_right = current_right == frisk_right_0_img ? frisk_right_1_img : frisk_right_0_img;
+					stepCount = 0;
+				}
+			}
+		}
+	}
+
+	else if (dir == UP)//check ladder first
+		frisk.pos.y += -VERTICAL_VELOCITY;
+
+	else if (dir == DOWN)
+		frisk.pos.y += VERTICAL_VELOCITY;
+
+	else
+	{
+		xVelocity = 0;
+	}
+}
+
+static void Climb(enum direction dir)
+{
+	if (dir == UP)
+	{
+		if(AABBOverlap(ladder_1))
+		{
+			if (frisk.pos.y + frisk.dim.height > platform_lvl1.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_1.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(UP);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height <= platform_lvl1.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl1.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		else if (AABBOverlap(ladder_2))
+		{
+			if (frisk.pos.y + frisk.dim.height > platform_lvl2.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_2.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(UP);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height <= platform_lvl2.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl2.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		else if (AABBOverlap(ladder_3))
+		{
+			if (frisk.pos.y + frisk.dim.height > platform_lvl3.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_3.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(UP);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height <= platform_lvl3.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl3.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		else if (AABBOverlap(ladder_4))
+		{
+			if (frisk.pos.y + frisk.dim.height > platform_lvl4.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_4.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(UP);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height <= platform_lvl4.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl4.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		else if (AABBOverlap(ladder_5))
+		{
+			if (frisk.pos.y + frisk.dim.height > -frisk.dim.height)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_5.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(UP);
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		else
+		{
+			//do nothing
+		}
+	}
+
+	else if (dir == DOWN)
+	{
+		//checks if player is above ladder_1
+		if(AABBOverlap(ladder_1))
+		{
+			if (frisk.pos.y + frisk.dim.height < platform_base.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_1.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(DOWN);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height >= platform_base.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_base.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		//checks if player is above ladder_2
+		else if (AABBOverlap(ladder_2))
+		{
+			if (frisk.pos.y + frisk.dim.height < platform_lvl1.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_2.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(DOWN);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height >= platform_lvl1.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl1.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		//checks if player is above ladder_3
+		else if (AABBOverlap(ladder_3))
+		{
+			if (frisk.pos.y + frisk.dim.height < platform_lvl2.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_3.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(DOWN);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height >= platform_lvl2.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl2.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		//checks if player is above ladder_4
+		else if (AABBOverlap(ladder_4))
+		{
+			if (frisk.pos.y + frisk.dim.height < platform_lvl3.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_4.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(DOWN);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height >= platform_lvl3.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl3.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		//checks if player is above ladder_5
+		else if (AABBOverlap(ladder_5))
+		{
+			if (frisk.pos.y + frisk.dim.height < platform_lvl4.pos.y)
+			{
+				isClimbing = true;
+				xVelocity = 0;
+				frisk.pos.x = ladder_5.pos.x + 2;
+				frisk.img = frisk_ladder_img;
+				Move(DOWN);
+			}
+
+			else if (frisk.pos.y + frisk.dim.height >= platform_lvl4.pos.y)
+			{
+				isClimbing = false;
+				frisk.pos.y = platform_lvl4.pos.y - frisk.dim.height;
+			}
+
+			else
+			{
+				//do nothing
+			}
+		}
+
+		//the player is not above a ladder
+		else
+		{
+			//do nothing
+		}
+	}
+}
+
+static void Jump()
+{
+	if (isJumping == false)
+	{
+		isJumping = true;
+		startJumpY = frisk.pos.y;
+		yVelocity = JUMP_VELOCITY;
+	}
+
+	else
+	{
+		//do nothing
+	}
+}
+
+static void Grab()
+{
+	if (AABBOverlap(bonus_1) && bonus_1.type != DEAD)
+	{
+		//remove bonus_1
+		xil_printf("You got a bonus!\r\n");
+		bonus_1.type = DEAD;
+		points += 500;
+	}
+
+	else if (AABBOverlap(bonus_2) && bonus_2.type != DEAD)
+	{
+		//remove bonus_2
+		xil_printf("You got a bonus!\r\n");
+		bonus_2.type = DEAD;
+		points += 500;
+	}
+
+	else
+	{
+		xil_printf("No Item...\r\n");
+	}
+}
+
+static void CheckCollision()
+{
+	if (AABBOverlap(bone) && bone.type != DEAD)
+	{
+		LoseLife();
+		return;
+	}
+
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			//check traps first
+			if (traps[i][j] && AABBOverlap(*traps[i][j]))
+			{
+				LoseLife();
+				return;
+			}
+		}
+	}
+}
+
+void CheckJump()
+{
+	bool isStillOver = false;
+
+	for(int i = 0; i < 3; i++)
+	{
+		if(!traps[currentLevel][i])
+			break;
+
+		if(frisk.pos.x > (traps[currentLevel][i]->pos.x - frisk.dim.width) &&
+		   frisk.pos.x < traps[currentLevel][i]->pos.x)
+		{
+			isOverTrap = true;
+			isStillOver = true;
+			break;
+		}
+	}
+
+	if(isOverTrap && !isStillOver)
+	{
+		points += 100;
+		isOverTrap = false;
+	}
+}
+
+static bool AABBOverlap(struct sprite test)
+{
+	short d1x = frisk.pos.x - (test.dim.width + test.pos.x);
+	short d1y = frisk.pos.y - (test.dim.height + test.pos.y);
+	short d2x = test.pos.x - (frisk.dim.width + frisk.pos.x);
+	short d2y = test.pos.y - (frisk.dim.height + frisk.pos.y);
+
+	if (d1x > 0 || d1y > 0)
+		return false;
+
+	if (d2x > 0 || d2y > 0)
+		return false;
+
+	return true;
+}
+
+static void ThrowBone()
+{
+	float x = frisk.pos.x - papyrus.pos.x;
+	float y = (frisk.pos.y - frisk.dim.height) - (papyrus.pos.y - papyrus.dim.height);
+
+	double angle = atan2(y,x);
+
+	float tempX = 6*cos(angle);
+
+	if (tempX < 0)
+	{
+		if (((short)abs(tempX))%2 == 1)
+		{
+			tempX = floor(tempX);
+		}
+
+		else
+		{
+			tempX = ceil(tempX);
+		}
+	}
+
+	else
+	{
+		if (((short)floor(tempX))%2 == 1)
+		{
+			tempX = ceil(tempX);
+		}
+
+		else
+		{
+			tempX = floor(tempX);
+		}
+	}
+
+	float tempY = round(6*sin(angle));
+
+	boneVelocityX = (short)tempX;
+	boneVelocityY = (short)tempY;
+
+	isThrowing = true;
+}
+
+void LoseLife()
+{
+	lives--;
+
+	frisk.img = frisk_still_img;
+	xVelocity = 0;
+	yVelocity = JUMP_VELOCITY;
+	isJumping = false;
+	isDead = true;
+}

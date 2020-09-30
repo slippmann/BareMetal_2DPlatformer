@@ -1,0 +1,174 @@
+verilog fifo_generator_v13_2_0 --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/simulation/fifo_generator_vlog_beh.v" \
+"../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/hdl/fifo_generator_v13_2_rfs.v" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/sim/fifo_generator_0.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/sim/donkey_kong_processing_system7_0_0.v" \
+
+sv xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_10/sim/bd_1b69_s00a2s_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_16/sim/bd_1b69_s01a2s_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_19/sim/bd_1b69_m00s2a_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_22/sim/bd_1b69_m00e_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_20/sim/bd_1b69_m00arn_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_21/sim/bd_1b69_m00rn_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_17/sim/bd_1b69_sarn_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_18/sim/bd_1b69_srn_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_13/sim/bd_1b69_s01mmu_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_14/sim/bd_1b69_s01tr_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_15/sim/bd_1b69_s01sic_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_11/sim/bd_1b69_sarn_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_12/sim/bd_1b69_srn_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_7/sim/bd_1b69_s00mmu_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_8/sim/bd_1b69_s00tr_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_9/sim/bd_1b69_s00sic_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_2/sim/bd_1b69_arsw_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_3/sim/bd_1b69_rsw_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_4/sim/bd_1b69_awsw_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_5/sim/bd_1b69_wsw_0.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_6/sim/bd_1b69_bsw_0.sv" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_0/sim/bd_1b69_one_0.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/sim/bd_1b69.v" \
+
+sv xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_33/sim/bd_1b69_s00a2s_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_39/sim/bd_1b69_s01a2s_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_42/sim/bd_1b69_m00s2a_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_45/sim/bd_1b69_m00e_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_43/sim/bd_1b69_m00arn_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_44/sim/bd_1b69_m00rn_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_40/sim/bd_1b69_sarn_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_41/sim/bd_1b69_srn_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_36/sim/bd_1b69_s01mmu_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_37/sim/bd_1b69_s01tr_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_38/sim/bd_1b69_s01sic_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_34/sim/bd_1b69_sarn_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_35/sim/bd_1b69_srn_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_30/sim/bd_1b69_s00mmu_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_31/sim/bd_1b69_s00tr_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_32/sim/bd_1b69_s00sic_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_25/sim/bd_1b69_arsw_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_26/sim/bd_1b69_rsw_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_27/sim/bd_1b69_awsw_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_28/sim/bd_1b69_wsw_1.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_29/sim/bd_1b69_bsw_1.sv" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_23/sim/bd_1b69_one_1.v" \
+
+sv xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_56/sim/bd_1b69_s00a2s_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_62/sim/bd_1b69_s01a2s_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_65/sim/bd_1b69_m00s2a_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_68/sim/bd_1b69_m00e_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_66/sim/bd_1b69_m00arn_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_67/sim/bd_1b69_m00rn_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_63/sim/bd_1b69_sarn_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_64/sim/bd_1b69_srn_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_59/sim/bd_1b69_s01mmu_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_60/sim/bd_1b69_s01tr_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_61/sim/bd_1b69_s01sic_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_57/sim/bd_1b69_sarn_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_58/sim/bd_1b69_srn_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_53/sim/bd_1b69_s00mmu_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_54/sim/bd_1b69_s00tr_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_55/sim/bd_1b69_s00sic_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_48/sim/bd_1b69_arsw_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_49/sim/bd_1b69_rsw_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_50/sim/bd_1b69_awsw_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_51/sim/bd_1b69_wsw_2.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_52/sim/bd_1b69_bsw_2.sv" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_46/sim/bd_1b69_one_2.v" \
+
+sv xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_79/sim/bd_1b69_s00a2s_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_85/sim/bd_1b69_s01a2s_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_88/sim/bd_1b69_m00s2a_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_91/sim/bd_1b69_m00e_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_89/sim/bd_1b69_m00arn_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_90/sim/bd_1b69_m00rn_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_86/sim/bd_1b69_sarn_7.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_87/sim/bd_1b69_srn_7.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_82/sim/bd_1b69_s01mmu_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_83/sim/bd_1b69_s01tr_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_84/sim/bd_1b69_s01sic_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_80/sim/bd_1b69_sarn_6.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_81/sim/bd_1b69_srn_6.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_76/sim/bd_1b69_s00mmu_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_77/sim/bd_1b69_s00tr_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_78/sim/bd_1b69_s00sic_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_71/sim/bd_1b69_arsw_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_72/sim/bd_1b69_rsw_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_73/sim/bd_1b69_awsw_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_74/sim/bd_1b69_wsw_3.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_75/sim/bd_1b69_bsw_3.sv" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_69/sim/bd_1b69_one_3.v" \
+
+sv xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_102/sim/bd_1b69_s00a2s_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_108/sim/bd_1b69_s01a2s_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_111/sim/bd_1b69_m00s2a_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_114/sim/bd_1b69_m00e_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_112/sim/bd_1b69_m00arn_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_113/sim/bd_1b69_m00rn_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_109/sim/bd_1b69_sarn_9.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_110/sim/bd_1b69_srn_9.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_105/sim/bd_1b69_s01mmu_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_106/sim/bd_1b69_s01tr_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_107/sim/bd_1b69_s01sic_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_103/sim/bd_1b69_sarn_8.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_104/sim/bd_1b69_srn_8.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_99/sim/bd_1b69_s00mmu_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_100/sim/bd_1b69_s00tr_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_101/sim/bd_1b69_s00sic_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_94/sim/bd_1b69_arsw_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_95/sim/bd_1b69_rsw_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_96/sim/bd_1b69_awsw_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_97/sim/bd_1b69_wsw_4.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_98/sim/bd_1b69_bsw_4.sv" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_92/sim/bd_1b69_one_4.v" \
+
+sv xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_125/sim/bd_1b69_s00a2s_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_131/sim/bd_1b69_s01a2s_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_134/sim/bd_1b69_m00s2a_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_137/sim/bd_1b69_m00e_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_135/sim/bd_1b69_m00arn_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_136/sim/bd_1b69_m00rn_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_132/sim/bd_1b69_sarn_11.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_133/sim/bd_1b69_srn_11.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_128/sim/bd_1b69_s01mmu_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_129/sim/bd_1b69_s01tr_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_130/sim/bd_1b69_s01sic_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_126/sim/bd_1b69_sarn_10.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_127/sim/bd_1b69_srn_10.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_122/sim/bd_1b69_s00mmu_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_123/sim/bd_1b69_s00tr_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_124/sim/bd_1b69_s00sic_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_117/sim/bd_1b69_arsw_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_118/sim/bd_1b69_rsw_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_119/sim/bd_1b69_awsw_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_120/sim/bd_1b69_wsw_5.sv" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_121/sim/bd_1b69_bsw_5.sv" \
+
+verilog xil_defaultlib --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ec67/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/d5d3/hdl/verilog" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/e0a2/hdl" --include "../../../../DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/571c/hdl/verilog" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_115/sim/bd_1b69_one_5.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_xlconcat_0_0/sim/donkey_kong_xlconcat_0_0.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_xbar_0/sim/donkey_kong_xbar_0.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/sim/fifo_generator_0.v" \
+"../../../bd/donkey_kong/ip/donkey_kong_auto_pc_0/sim/donkey_kong_auto_pc_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

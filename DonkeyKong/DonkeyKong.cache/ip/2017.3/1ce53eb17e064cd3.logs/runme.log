@@ -1,0 +1,117 @@
+
+*** Running vivado
+    with args -log donkey_kong_smartconnect_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source donkey_kong_smartconnect_0_0.tcl
+
+
+****** Vivado v2017.3 (64-bit)
+  **** SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+  **** IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source donkey_kong_smartconnect_0_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 424.891 ; gain = 102.160
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_smartconnect_0_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/synth/donkey_kong_smartconnect_0_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:10]
+INFO: [Synth 8-638] synthesizing module 'clk_map_imp_28ECWZ' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:367]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_one_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_0/synth/bd_f6bd_one_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'xlconstant_v1_1_3_xlconstant' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'xlconstant_v1_1_3_xlconstant' (1#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0750/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_one_0' (2#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_0/synth/bd_f6bd_one_0.v:57]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_psr_aclk_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_1/synth/bd_f6bd_psr_aclk_0.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-638] synthesizing module 'lpf' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'SRL16' [C:/Xilinx/Vivado/2017.3/scripts/rt/data/unisim_comp.v:50689]
+INFO: [Synth 8-256] done synthesizing module 'SRL16' (3#1) [C:/Xilinx/Vivado/2017.3/scripts/rt/data/unisim_comp.v:50689]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (4#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (5#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:816]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (6#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:125]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (7#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (8#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/f86a/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1323]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_psr_aclk_0' (9#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_1/synth/bd_f6bd_psr_aclk_0.vhd:74]
+INFO: [Synth 8-256] done synthesizing module 'clk_map_imp_28ECWZ' (10#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:367]
+INFO: [Synth 8-638] synthesizing module 'm00_exit_pipeline_imp_1UROENS' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:411]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_m00e_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_9/synth/bd_f6bd_m00e_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_m00e_0' (24#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_9/synth/bd_f6bd_m00e_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'm00_exit_pipeline_imp_1UROENS' (25#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:411]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_m00s2a_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_8/synth/bd_f6bd_m00s2a_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_m00s2a_0' (27#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_8/synth/bd_f6bd_m00s2a_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_s00a2s_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_5/synth/bd_f6bd_s00a2s_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_s00a2s_0' (29#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_5/synth/bd_f6bd_s00a2s_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 's00_entry_pipeline_imp_W23INV' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:587]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_s00mmu_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_2/synth/bd_f6bd_s00mmu_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_s00mmu_0' (33#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_2/synth/bd_f6bd_s00mmu_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_s00sic_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_4/synth/bd_f6bd_s00sic_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_s00sic_0' (36#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_4/synth/bd_f6bd_s00sic_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_s00tr_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_3/synth/bd_f6bd_s00tr_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_s00tr_0' (39#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_3/synth/bd_f6bd_s00tr_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 's00_entry_pipeline_imp_W23INV' (40#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:587]
+INFO: [Synth 8-638] synthesizing module 's00_nodes_imp_SCUASH' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:871]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_sarn_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_6/synth/bd_f6bd_sarn_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 'xpm_memory_base' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-256] done synthesizing module 'xpm_memory_base' (45#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_sarn_0' (54#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_6/synth/bd_f6bd_sarn_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 'bd_f6bd_srn_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_7/synth/bd_f6bd_srn_0.sv:58]
+INFO: [Synth 8-638] synthesizing module 'xpm_memory_base__parameterized0' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-256] done synthesizing module 'xpm_memory_base__parameterized0' (55#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd_srn_0' (56#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/ip/ip_7/synth/bd_f6bd_srn_0.sv:58]
+INFO: [Synth 8-256] done synthesizing module 's00_nodes_imp_SCUASH' (57#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:871]
+INFO: [Synth 8-256] done synthesizing module 'bd_f6bd' (58#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/bd_0/synth/bd_f6bd.v:10]
+INFO: [Synth 8-256] done synthesizing module 'donkey_kong_smartconnect_0_0' (59#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_smartconnect_0_0/synth/donkey_kong_smartconnect_0_0.v:57]
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 545.129 ; gain = 222.398
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 545.129 ; gain = 222.398
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.904 . Memory (MB): peak = 1112.973 ; gain = 25.992
+Finished Constraint Validation : Time (s): cpu = 00:00:45 ; elapsed = 00:01:09 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:45 ; elapsed = 00:01:09 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:01:09 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:01:12 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:24 . Memory (MB): peak = 1112.973 ; gain = 790.242
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+----------------+----------------------+---------------+
+|Module Name                                                                                                                                               | RTL Object                       | Inference      | Size (Depth x Width) | Primitives    | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+----------------+----------------------+---------------+
+|inst/i_1/\s00_nodes/s00_ar_node/inst /\inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory  | gen_wr_a.gen_word_narrow.mem_reg | User Attribute | 32 x 156             | RAM32M x 26   | 
+|inst/i_1/\s00_nodes/s00_r_node/inst /\inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory   | gen_wr_a.gen_word_narrow.mem_reg | User Attribute | 32 x 101             | RAM32M x 17   | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+----------------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:01:36 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Timing Optimization : Time (s): cpu = 00:01:12 ; elapsed = 00:01:37 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Technology Mapping : Time (s): cpu = 00:01:13 ; elapsed = 00:01:38 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished IO Insertion : Time (s): cpu = 00:01:14 ; elapsed = 00:01:39 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:14 ; elapsed = 00:01:39 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:14 ; elapsed = 00:01:40 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:14 ; elapsed = 00:01:40 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:40 . Memory (MB): peak = 1112.973 ; gain = 790.242
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:15 ; elapsed = 00:01:40 . Memory (MB): peak = 1112.973 ; gain = 790.242
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |     8|
+|2     |LUT1    |    24|
+|3     |LUT2    |    47|
+|4     |LUT3    |    29|
+|5     |LUT4    |   314|
+|6     |LUT5    |    68|
+|7     |LUT6    |   202|
+|8     |RAM32M  |    24|
+|9     |SRL16   |     1|
+|10    |SRLC32E |     7|
+|11    |FDR     |     4|
+|12    |FDRE    |   733|
+|13    |FDSE    |    41|
++------+--------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:15 ; elapsed = 00:01:40 . Memory (MB): peak = 1112.973 ; gain = 790.242
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:42 . Memory (MB): peak = 1112.973 ; gain = 801.703

@@ -1,0 +1,100 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Mar  7 18:42:22 2018
+| Host         : ensc-pit-33 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'donkey_kong_AXI_VGA_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of donkey_kong_AXI_VGA_0_0 (sfu.ca:user:AXI_VGA:1.0) from (Rev. 28) to (Rev. 29)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Mar  7 18:38:35 2018
+| Host         : ensc-pit-33 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'donkey_kong_AXI_VGA_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of donkey_kong_AXI_VGA_0_0 (sfu.ca:user:AXI_VGA:1.0 (Rev. 28)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Mar  7 18:37:12 2018
+| Host         : ensc-pit-33 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'donkey_kong_AXI_VGA_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of donkey_kong_AXI_VGA_0_0 (sfu.ca:user:AXI_VGA:1.0) from (Rev. 27) to (Rev. 28)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Mar  7 18:33:38 2018
+| Host         : ensc-pit-33 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'donkey_kong_AXI_VGA_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of donkey_kong_AXI_VGA_0_0 (sfu.ca:user:AXI_VGA:1.0 (Rev. 27)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Mar  7 18:32:31 2018
+| Host         : ensc-pit-33 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'donkey_kong_AXI_VGA_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of donkey_kong_AXI_VGA_0_0 (sfu.ca:user:AXI_VGA:1.0 (Rev. 27)) to Vivado generation flows.
+

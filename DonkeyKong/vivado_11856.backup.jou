@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Mar 23 14:30:21 2018
+# Process ID: 11856
+# Current directory: C:/Users/slippman/DonkeyKong
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12192 C:\Users\slippman\DonkeyKong\DonkeyKong.xpr
+# Log file: C:/Users/slippman/DonkeyKong/vivado.log
+# Journal file: C:/Users/slippman/DonkeyKong\vivado.jou
+#----------------------------------------------------------ststart_guopopen_project C:/Users/slippman/DonkeyKong/DonkeyKong.xpupdate_compile_order -fileset sources_1
+launch_sdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf

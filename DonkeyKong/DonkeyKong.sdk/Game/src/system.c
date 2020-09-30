@@ -1,0 +1,50 @@
+#include "global.h"
+#include "vga/axi_vga.h"
+#include "ctr/axi_controller.h"
+#include "gam/game_logic.h"
+
+/*****************************************************************************/
+/**
+*
+* Main function
+*
+* This function is the main entry of the VGA test
+*
+* @param	None
+*
+* @return
+*		- XST_SUCCESS if example finishes successfully
+*		- XST_FAILURE if example fails.
+*
+* @note		None
+*
+******************************************************************************/
+int main(void)
+{
+	int Status;
+
+	xil_printf("\r\n--- Entering main() --- \r\n");
+
+	Status = InitController();
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("Controller initialization failed... %d\r\n", Status);
+		return XST_FAILURE;
+	}
+
+	Status = InitVGA();
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("VGA initialization failed... %d\r\n", Status);
+		return XST_FAILURE;
+	}
+
+	StartGame();
+
+	DestroyVGA();
+	DestroyController();
+
+	xil_printf("--- Exiting main() --- \r\n");
+
+	return XST_FAILURE;
+}

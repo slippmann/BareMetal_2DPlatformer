@@ -1,0 +1,101 @@
+#include "game_logic.h"
+
+/***********************Global Variables**********************/
+static enum state currentState = MAIN;
+static u8 buttons;
+
+static u16 * frame = (u16 *)MEM_BASE_ADDR;
+static struct image * mario = (struct image *)CONTENT_BASE_ADDR;
+struct position mario_pos;
+
+/***********************Prototypes*****************************/
+static void ControllerCallback(void * data);
+static void HandleButtons(void);
+static void DrawMario(void);
+
+void StartGame(void)
+{
+	SetControllerCallback(ControllerCallback);
+
+	//game loop
+	while (TRUE)
+	{
+		HandleButtons();
+
+		DrawMario();
+	}
+}
+
+enum state GetCurrentState(void)
+{
+	return currentState;
+}
+
+void ControllerCallback(void * data)
+{
+	buttons = (u8) ((u32) data);
+}
+
+void HandleButtons(void)
+{
+	switch (currentState)
+	{
+		case MAIN:
+		{
+			if(buttons & START_MASK)
+			{
+				currentState = PLAY;
+			}
+		}
+		case PLAY:
+		{
+			if (buttons & START_MASK)
+			{
+				currentState = PAUSE;
+			}
+
+			if(buttons & UP_MASK)
+			{
+				//ClimbLadder();
+			}
+			else if (buttons & DOWN_MASK)
+			{
+				//ClimbLadder();
+			}
+			else if (buttons & LEFT_MASK)
+			{
+				//Move(LEFT);
+				mario_pos.x -= 5;
+			}
+			else if (buttons & RIGHT_MASK)
+			{
+				//Move(LEFT);
+				mario_pos.y -= 5;
+			}
+
+			if(buttons & A_MASK)
+			{
+				//Jump();
+			}
+			else if (buttons & B_MASK)
+			{
+				//UsePowerup();
+			}
+		}
+		case PAUSE:
+		{
+
+		}
+		case GAMEOVER:
+		{
+
+		}
+		default:
+			return;
+	}
+}
+
+void DrawMario(void)
+{
+	DrawSprite(frame, mario, mario_pos.x, mario_pos.y);
+}

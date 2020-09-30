@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Mar 23 14:30:21 2018
+# Process ID: 11856
+# Current directory: C:/Users/slippman/DonkeyKong
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12192 C:\Users\slippman\DonkeyKong\DonkeyKong.xpr
+# Log file: C:/Users/slippman/DonkeyKong/vivado.log
+# Journal file: C:/Users/slippman/DonkeyKong\vivado.jou
+#----------------------------------------------------------ststart_guopopen_project C:/Users/slippman/DonkeyKong/DonkeyKong.xpScScanning sources..Finished scanning sources
+ININFO: [IP_Flow 19-234] Refreshing IP repositorieININFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/slippman/ip_repo'INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'donkey_kong_auto_pc_0' generated file not found 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_auto_pc_0/stats.txt'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:22 ; elapsed = 00:00:19 . Memory (MB): peak = 959.898 ; gain = 202.289
+update_compile_order -fileset sources_1
+launch_sdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 23 20:04:51 2018...
+] 'open_project' was cancelled
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 23 14:30:53 2018...

@@ -1,0 +1,97 @@
+#ifndef _GLOBAL_H_
+#define _GLOBAL_H_
+
+#include "xparameters.h"
+#include "xil_exception.h"
+#include "xdebug.h"
+#include "string.h"
+#include "sleep.h"
+#include <stdbool.h>
+
+#define DEBUG
+
+#define DDR_BASE_ADDR			XPAR_PS7_DDR_0_S_AXI_BASEADDR
+#define MEM_BASE_ADDR		  	(DDR_BASE_ADDR + 0x1000000)
+
+#define FRAME_WIDTH 			(640)
+#define FRAME_HEIGHT			(480)
+#define FRAME_LEN				(FRAME_WIDTH * FRAME_HEIGHT * 2) /* 640x480 = 307200 pixels * 2 bytes/pixel= 614400 bytes */
+
+#define VIDEO_MEM_SIZE		 	(FRAME_LEN * 2) /* two frames */
+
+#define GAME_BASE_ADDR			(MEM_BASE_ADDR + VIDEO_MEM_SIZE)
+
+#define IMG_HEADER_LEN			(4)
+#define CONTENT_BASE_ADDR		(DDR_BASE_ADDR + 0x2000000)
+
+/********************************
+ *
+ * Image and song file locations
+ *
+ *******************************/
+// Splash screen
+#define SPLASH_SCREEN				(CONTENT_BASE_ADDR) //0x0210 0000
+
+// Main Menu
+#define MAIN_MENU_BACKGROUND		(SPLASH_SCREEN + 614404) 			// size(bytes): 614404
+#define PRESS_START					(MAIN_MENU_BACKGROUND + 614404) 	// size(bytes): 6388
+
+// Game Over
+#define GAME_OVER_BACKGROUND		(PRESS_START + 6388) 				// size(bytes): 614404
+#define GAME_OVER_DONT_GIVE_UP		(GAME_OVER_BACKGROUND + 614404)		// size(bytes): 37048
+#define GAME_OVER_STAY_DETERMINED	(GAME_OVER_DONT_GIVE_UP + 37048)	// size(bytes): 37048
+
+// Pause Menu
+#define PAUSE_MENU_BACKGROUND		(GAME_OVER_STAY_DETERMINED + 37048) // size(bytes): 150004
+#define PAUSE_MENU_CONTINUE			(PAUSE_MENU_BACKGROUND + 150004)	// size(bytes): 3844
+#define PAUSE_MENU_EXIT				(PAUSE_MENU_CONTINUE + 3844)		// size(bytes): 3844
+
+// Game Scene
+#define GAME_BACKGROUND 			(PAUSE_MENU_EXIT + 3844)			// size(bytes):	614404
+#define FRISK_STILL_ADDR			(GAME_BACKGROUND + 614404)			// size(bytes): 1412
+#define FRISK_LADDER_ADDR			(FRISK_STILL_ADDR + 1412)			// size(bytes): 1412
+#define FRISK_LEFT_0_ADDR			(FRISK_LADDER_ADDR + 1412)			// size(bytes): 1412
+#define FRISK_LEFT_1_ADDR			(FRISK_LEFT_0_ADDR + 1412)			// size(bytes): 1412
+#define FRISK_RIGHT_0_ADDR			(FRISK_LEFT_1_ADDR + 1412)			// size(bytes): 1412
+#define FRISK_RIGHT_1_ADDR			(FRISK_RIGHT_0_ADDR + 1412)			// size(bytes): 1412
+#define PLATFORM_BASE_ADDR			(FRISK_RIGHT_1_ADDR + 1412)			// size(bytes): 40964
+#define PLATFORM_LVL_ADDR			(PLATFORM_BASE_ADDR + 40964)		// size(bytes): 18436
+#define LADDER_ADDR					(PLATFORM_LVL_ADDR + 18436)			// size(bytes): 4036
+#define BONUS_ADDR					(LADDER_ADDR + 4036)				// size(bytes): 436
+#define FIRE_0_ADDR					(BONUS_ADDR + 436)					// size(bytes): 404
+#define FIRE_1_ADDR					(FIRE_0_ADDR + 404)					// size(bytes): 404
+#define SPEAR_ADDR					(FIRE_1_ADDR + 404)					// size(bytes): 796
+#define SAW_ADDR					(SPEAR_ADDR + 796)					// size(bytes): 796
+#define SANS_STILL_ADDR				(SAW_ADDR + 796)					// size(bytes): 1540
+#define PAPYRUS_STILL_ADDR			(SANS_STILL_ADDR + 1540)			// size(bytes): 2188
+#define BONE_RIGHT_ADDR				(PAPYRUS_STILL_ADDR + 2188)			// size(bytes): 396
+#define BONE_LEFT_ADDR				(BONE_RIGHT_ADDR + 396)				// size(bytes): 396
+#define BONE_VERTICAL_ADDR			(BONE_LEFT_ADDR + 396)				// size(bytes): 396
+#define BONE_HORIZONTAL_ADDR		(BONE_VERTICAL_ADDR + 396)			// size(bytes): 396
+
+// dialog
+#define SANS_DIALOG_0_ADDR			(BONE_HORIZONTAL_ADDR + 396)       	// size(bytes): 25604
+#define SANS_DIALOG_1_ADDR			(SANS_DIALOG_0_ADDR + 25604)		// size(bytes): 25604
+#define SANS_DIALOG_2_ADDR			(SANS_DIALOG_1_ADDR + 25604)		// size(bytes): 25604
+#define SANS_DIALOG_3_ADDR			(SANS_DIALOG_2_ADDR + 25604)		// size(bytes): 25604
+#define SANS_DIALOG_4_ADDR			(SANS_DIALOG_3_ADDR + 25604)		// size(bytes): 25604
+#define PAPYRUS_DIALOG_0_ADDR		(SANS_DIALOG_4_ADDR + 25604)		// size(bytes): 25604
+#define PAPYRUS_DIALOG_1_ADDR		(PAPYRUS_DIALOG_0_ADDR + 25604)		// size(bytes): 25604
+#define PAPYRUS_DIALOG_2_ADDR		(PAPYRUS_DIALOG_1_ADDR + 25604)		// size(bytes): 25604
+#define PAPYRUS_DIALOG_3_ADDR		(PAPYRUS_DIALOG_2_ADDR + 25604)		// size(bytes): 25604
+#define PAPYRUS_DIALOG_4_ADDR		(PAPYRUS_DIALOG_3_ADDR + 25604)		// size(bytes): 25604
+
+#define HEART_ADDR					(PAPYRUS_DIALOG_4_ADDR + 25604)		// size(bytes): 652
+
+// Misc.
+#define NUMBERS_ADDR				(HEART_ADDR + 652)					// size(bytes): 4324
+
+// Song
+#define SHARED_MEM_ADDR				(0x12000000)
+
+#define SUCCESS 	 0
+#define FAILURE 	-1
+
+extern void xil_printf(const char *format, ...);
+
+#endif

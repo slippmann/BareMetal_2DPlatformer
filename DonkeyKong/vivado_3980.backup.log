@@ -1,0 +1,610 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Apr  2 19:13:40 2018
+# Process ID: 3980
+# Current directory: C:/Users/slippman/DonkeyKong
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8296 C:\Users\slippman\DonkeyKong\DonkeyKong.xpr
+# Log file: C:/Users/slippman/DonkeyKong/vivado.log
+# Journal file: C:/Users/slippman/DonkeyKong\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/slippman/DonkeyKong/DonkeyKong.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/slippman/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'donkey_kong_auto_pc_0' generated file not found 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_auto_pc_0/stats.txt'. Please regenerate to continue.
+open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:28 . Memory (MB): peak = 890.500 ; gain = 177.113
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd}
+Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding cell -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - xlconcat_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_0
+Adding cell -- xilinx.com:module_ref:Debouncer:1.0 - Debouncer_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- sfu.ca:user:axi_audio_codec:1.0 - axi_audio_codec_0
+Adding cell -- sfu.ca:user:AXI_VGA:1.0 - AXI_VGA_0
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Excluding </processing_system7_0/S_AXI_ACP/ACP_IOP> from </axi_dma_1/Data_MM2S>
+Excluding </processing_system7_0/S_AXI_ACP/ACP_M_AXI_GP0> from </axi_dma_1/Data_MM2S>
+Excluding </processing_system7_0/S_AXI_ACP/ACP_IOP> from </axi_dma_0/Data_MM2S>
+Excluding </processing_system7_0/S_AXI_ACP/ACP_M_AXI_GP0> from </axi_dma_0/Data_MM2S>
+Successfully read diagram <donkey_kong> from BD file <C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd>
+open_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 976.547 ; gain = 69.980
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z020clg484-1
+Top: donkey_kong_wrapper
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1096.535 ; gain = 83.320
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_wrapper' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/hdl/donkey_kong_wrapper.vhd:55]
+INFO: [Synth 8-3491] module 'donkey_kong' declared at 'C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1301' bound to instance 'donkey_kong_i' of component 'donkey_kong' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/hdl/donkey_kong_wrapper.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1346]
+INFO: [Synth 8-3491] module 'donkey_kong_AXI_VGA_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_AXI_VGA_0_0_stub.vhdl:5' bound to instance 'AXI_VGA_0' of component 'donkey_kong_AXI_VGA_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1927]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_AXI_VGA_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_AXI_VGA_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'donkey_kong_Debouncer_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_Debouncer_0_0_stub.vhdl:5' bound to instance 'Debouncer_0' of component 'donkey_kong_Debouncer_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1942]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_Debouncer_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_Debouncer_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'donkey_kong_axi_audio_codec_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_audio_codec_0_0_stub.vhdl:5' bound to instance 'axi_audio_codec_0' of component 'donkey_kong_axi_audio_codec_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1948]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_axi_audio_codec_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_audio_codec_0_0_stub.vhdl:27]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1461]
+INFO: [Synth 8-3491] module 'donkey_kong_axi_dma_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'donkey_kong_axi_dma_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1967]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_axi_dma_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_dma_0_0_stub.vhdl:51]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1609]
+INFO: [Synth 8-3491] module 'donkey_kong_axi_dma_1_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_dma_1_0_stub.vhdl:5' bound to instance 'axi_dma_1' of component 'donkey_kong_axi_dma_1_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:2009]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_axi_dma_1_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_dma_1_0_stub.vhdl:51]
+INFO: [Synth 8-3491] module 'donkey_kong_axi_gpio_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'donkey_kong_axi_gpio_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:2051]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_axi_gpio_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_gpio_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'donkey_kong_axi_smc_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_smc_0_stub.vhdl:5' bound to instance 'axi_smc' of component 'donkey_kong_axi_smc_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:2075]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_axi_smc_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_axi_smc_0_stub.vhdl:58]
+INFO: [Synth 8-3491] module 'donkey_kong_processing_system7_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'donkey_kong_processing_system7_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:2125]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_processing_system7_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_processing_system7_0_0_stub.vhdl:121]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_ps7_0_axi_periph_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:725]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_MPMXA4' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_MPMXA4' (1#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1L5QNAA' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:153]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1L5QNAA' (2#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_1E968W1' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:252]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1E968W1' (3#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:252]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1GOEAR0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:373]
+INFO: [Synth 8-3491] module 'donkey_kong_auto_pc_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'donkey_kong_auto_pc_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:556]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_auto_pc_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1GOEAR0' (4#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:373]
+INFO: [Synth 8-3491] module 'donkey_kong_xbar_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'donkey_kong_xbar_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1219]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_xbar_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'donkey_kong_ps7_0_axi_periph_0' (5#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:725]
+INFO: [Synth 8-3491] module 'donkey_kong_rst_ps7_0_100M_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'donkey_kong_rst_ps7_0_100M_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:2338]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_rst_ps7_0_100M_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'donkey_kong_xlconcat_0_0' declared at 'C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_xlconcat_0_0_stub.vhdl:5' bound to instance 'xlconcat_0' of component 'donkey_kong_xlconcat_0_0' [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:2351]
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_xlconcat_0_0' [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/realtime/donkey_kong_xlconcat_0_0_stub.vhdl:15]
+INFO: [Synth 8-256] done synthesizing module 'donkey_kong' (6#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/synth/donkey_kong.vhd:1346]
+INFO: [Synth 8-256] done synthesizing module 'donkey_kong_wrapper' (7#1) [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/hdl/donkey_kong_wrapper.vhd:55]
+WARNING: [Synth 8-3331] design s00_couplers_imp_1GOEAR0 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_1GOEAR0 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_1E968W1 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_1E968W1 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_1E968W1 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_1E968W1 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1L5QNAA has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1L5QNAA has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1L5QNAA has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1L5QNAA has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_MPMXA4 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_MPMXA4 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_MPMXA4 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_MPMXA4 has unconnected port S_ARESETN
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1110.563 ; gain = 97.348
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1110.563 ; gain = 97.348
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/donkey_kong_AXI_VGA_0_0.dcp' for cell 'donkey_kong_i/AXI_VGA_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_Debouncer_0_0/donkey_kong_Debouncer_0_0.dcp' for cell 'donkey_kong_i/Debouncer_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/donkey_kong_axi_audio_codec_0_0.dcp' for cell 'donkey_kong_i/axi_audio_codec_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.dcp' for cell 'donkey_kong_i/axi_dma_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.dcp' for cell 'donkey_kong_i/axi_dma_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.dcp' for cell 'donkey_kong_i/axi_gpio_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/donkey_kong_axi_smc_0.dcp' for cell 'donkey_kong_i/axi_smc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.dcp' for cell 'donkey_kong_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.dcp' for cell 'donkey_kong_i/rst_ps7_0_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_xlconcat_0_0/donkey_kong_xlconcat_0_0.dcp' for cell 'donkey_kong_i/xlconcat_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_xbar_0/donkey_kong_xbar_0.dcp' for cell 'donkey_kong_i/ps7_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_auto_pc_0/donkey_kong_auto_pc_0.dcp' for cell 'donkey_kong_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 223 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/i_clocking/clkin1_buf 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'donkey_kong_i/AXI_VGA_0/s00_axis_aclk' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/dcp25/donkey_kong_AXI_VGA_0_0.edf:16715]
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'donkey_kong_i/axi_audio_codec_0/s00_axis_aclk' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/Users/slippman/DonkeyKong/.Xil/Vivado-3980-ensc-pit-30/dcp45/donkey_kong_axi_audio_codec_0_0.edf:18711]
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:46]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:47]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:48]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:49]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:50]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:51]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:52]
+Finished Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-140] Inserted 9 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 19 OBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 76 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 75 instances
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:27 . Memory (MB): peak = 1556.691 ; gain = 543.477
+66 Infos, 20 Warnings, 7 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:28 . Memory (MB): peak = 1556.691 ; gain = 543.477
+set_property PULLTYPE PULLUP [get_ports [list {Button[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[1]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[2]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[3]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[4]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[5]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[6]}]]
+set_property target_constrs_file C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc [current_fileset -constrset]
+save_constraints -force
+set_property package_pin "" [get_ports [list  {Button[0]}]]
+save_constraints
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:39]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:40]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:41]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:42]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:43]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:44]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:45]
+Finished Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 1629.199 ; gain = 22.344
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA1)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:46]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA2)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:47]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA3)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:48]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA4)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:49]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA7)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:50]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA9)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:51]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#(JA10)' specified for 'objects'. [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc:52]
+Finished Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 1650.855 ; gain = 21.656
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Finished Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1652.988 ; gain = 2.133
+set_property PULLTYPE PULLUP [get_ports [list {Button[0]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[1]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[2]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[3]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[4]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[5]}]]
+set_property PULLTYPE PULLUP [get_ports [list {Button[6]}]]
+save_constraints
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd]
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc] for cell 'donkey_kong_i/processing_system7_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_processing_system7_0_0/donkey_kong_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0_board.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_rst_ps7_0_100M_0/donkey_kong_rst_ps7_0_100M_0.xdc] for cell 'donkey_kong_i/rst_ps7_0_100M/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0_board.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_smc_0/bd_0/ip/ip_1/bd_1b69_psr_aclk_0.xdc] for cell 'donkey_kong_i/axi_smc/inst/clk_map/psr_aclk/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0_board.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_gpio_0_0/donkey_kong_axi_gpio_0_0.xdc] for cell 'donkey_kong_i/axi_gpio_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_audio_codec_0_0/src/fifo_generator_0_2/fifo_generator_0.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Finished Parsing XDC File [C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/constrs_1/imports/new/pin_config.xdc]
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_AXI_VGA_0_0/src/fifo_generator_0/fifo_generator_0_clocks.xdc] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/donkey_kong_axi_dma_0_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_0/U0'
+Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Finished Parsing XDC File [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_1_0/donkey_kong_axi_dma_1_0_clocks.xdc] for cell 'donkey_kong_i/axi_dma_1/U0'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_rrst_wr'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_single_inst_wrst_rd'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnrst_full.gsckt_bsy_o.xpm_cdc_sync_rst_sckt_bsy_o'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_sync_rst.tcl] for cell 'donkey_kong_i/AXI_VGA_0/U0/pixel_buffer/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.xpm_cdc_sync_rst_inst_wrst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_1/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+Finished Sourcing Tcl File [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl] for cell 'donkey_kong_i/axi_dma_0/U0/I_PRMRY_DATAMOVER/GEN_MM2S_FULL.I_MM2S_FULL_WRAPPER/GEN_INCLUDE_MM2S_SF.I_RD_SF/I_DATA_FIFO/BLK_MEM.I_SYNC_FIFOGEN_FIFO/xpm_fifo_instance.xpm_fifo_sync_inst/xpm_fifo_base_inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/donkey_kong_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/donkey_kong_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1662.520 ; gain = 9.531
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Apr  2 19:42:42 2018] Launched synth_1...
+Run output will be captured here: C:/Users/slippman/DonkeyKong/DonkeyKong.runs/synth_1/runme.log
+[Mon Apr  2 19:42:42 2018] Launched impl_1...
+Run output will be captured here: C:/Users/slippman/DonkeyKong/DonkeyKong.runs/impl_1/runme.log
+file copy -force C:/Users/slippman/DonkeyKong/DonkeyKong.runs/impl_1/donkey_kong_wrapper.sysdef C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+
+launch_sdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd}
+open_bd_design {C:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/donkey_kong.bd}
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[0]}]]
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[1]}]]
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[2]}]]
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[3]}]]
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[4]}]]
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[5]}]]
+set_property PULLTYPE PULLDOWN [get_ports [list {Button[6]}]]
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Mon Apr  2 20:04:32 2018] Launched impl_1...
+Run output will be captured here: C:/Users/slippman/DonkeyKong/DonkeyKong.runs/impl_1/runme.log
+file copy -force C:/Users/slippman/DonkeyKong/DonkeyKong.runs/impl_1/donkey_kong_wrapper.sysdef C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+
+launch_sdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+launch_sdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/slippman/DonkeyKong/DonkeyKong.sdk -hwspec C:/Users/slippman/DonkeyKong/DonkeyKong.sdk/donkey_kong_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  3 01:09:45 2018...

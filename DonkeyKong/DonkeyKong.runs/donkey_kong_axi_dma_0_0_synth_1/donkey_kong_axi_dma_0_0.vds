@@ -1,0 +1,174 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Wed Mar  7 14:56:45 2018
+# Process ID: 10524
+# Current directory: C:/Users/slippman/DonkeyKong/DonkeyKong.runs/donkey_kong_axi_dma_0_0_synth_1
+# Command line: vivado.exe -log donkey_kong_axi_dma_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source donkey_kong_axi_dma_0_0.tcl
+# Log file: C:/Users/slippman/DonkeyKong/DonkeyKong.runs/donkey_kong_axi_dma_0_0_synth_1/donkey_kong_axi_dma_0_0.vds
+# Journal file: C:/Users/slippman/DonkeyKong/DonkeyKong.runs/donkey_kong_axi_dma_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source donkey_kong_axi_dma_0_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 411.645 ; gain = 96.109
+INFO: [Synth 8-638] synthesizing module 'donkey_kong_axi_dma_0_0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/synth/donkey_kong_axi_dma_0_0.vhd:104]
+INFO: [Synth 8-638] synthesizing module 'axi_dma' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:21849]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_rst_module' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:1595]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (1#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_reset' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:603]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_reset' (2#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:603]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_rst_module' (3#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:1595]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_reg_module' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:8254]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_lite_if' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:2066]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_lite_if' (4#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:2066]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_register' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:3604]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_register' (5#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:3604]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_reg_module' (6#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:8254]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_mm2s_mngr' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:14903]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_smple_sm' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:11703]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_smple_sm' (7#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:11703]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_mm2s_cmdsts_if' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:13686]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_mm2s_cmdsts_if' (8#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:13686]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_mm2s_sts_mngr' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:14001]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_mm2s_sts_mngr' (9#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:14001]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_mm2s_mngr' (10#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:14903]
+INFO: [Synth 8-638] synthesizing module 'axi_dma_sofeof_gen' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:11173]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma_sofeof_gen' (11#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:11173]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:55429]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_mm2s_full_wrap' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:53565]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_reset' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_reset' (12#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_cmd_status' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo' (13#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized0' (13#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_cmd_status' (14#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:2698]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rd_status_cntl' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:13746]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rd_status_cntl' (15#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:13746]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_pcc' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:7416]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2' (16#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_strb_gen2__parameterized0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_strb_gen2__parameterized0' (16#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:4342]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_pcc' (17#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:7416]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_addr_cntl' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized1' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (18#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (19#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (20#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (21#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized1' (21#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_addr_cntl' (22#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:10000]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rddata_cntl' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:12185]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rdmux' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:10681]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rdmux' (23#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:10681]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized2' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized0' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized0' (23#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized0' (23#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized0' (23#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized2' (23#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rddata_cntl' (24#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:12185]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_rd_sf' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:20206]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_fifo__parameterized3' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f__parameterized1' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f__parameterized1' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f__parameterized1' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f__parameterized1' (24#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:397]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f__parameterized1' (24#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:697]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f__parameterized1' (24#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/51ce/hdl/lib_srl_fifo_v1_0_rfs.vhd:1000]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_fifo__parameterized3' (24#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1886]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_sfifo_autord' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
+INFO: [Synth 8-638] synthesizing module 'sync_fifo_fg' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/462e/hdl/lib_fifo_v1_0_rfs.vhd:2246]
+INFO: [Synth 8-638] synthesizing module 'xpm_fifo_sync' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1845]
+INFO: [Synth 8-638] synthesizing module 'xpm_fifo_base' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-638] synthesizing module 'xpm_counter_updn' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-256] done synthesizing module 'xpm_counter_updn' (25#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-638] synthesizing module 'xpm_counter_updn__parameterized0' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-256] done synthesizing module 'xpm_counter_updn__parameterized0' (25#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-638] synthesizing module 'xpm_memory_base' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-256] done synthesizing module 'xpm_memory_base' (26#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-638] synthesizing module 'xpm_fifo_reg_bit' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1800]
+INFO: [Synth 8-256] done synthesizing module 'xpm_fifo_reg_bit' (27#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1800]
+INFO: [Synth 8-638] synthesizing module 'xpm_counter_updn__parameterized1' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-256] done synthesizing module 'xpm_counter_updn__parameterized1' (27#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-638] synthesizing module 'xpm_fifo_rst' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1609]
+INFO: [Synth 8-256] done synthesizing module 'xpm_fifo_rst' (28#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1609]
+INFO: [Synth 8-638] synthesizing module 'xpm_counter_updn__parameterized2' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-256] done synthesizing module 'xpm_counter_updn__parameterized2' (28#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-638] synthesizing module 'xpm_counter_updn__parameterized3' [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-256] done synthesizing module 'xpm_counter_updn__parameterized3' (28#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1752]
+INFO: [Synth 8-256] done synthesizing module 'xpm_fifo_base' (29#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:56]
+INFO: [Synth 8-256] done synthesizing module 'xpm_fifo_sync' (30#1) [C:/Xilinx/Vivado/2017.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1845]
+INFO: [Synth 8-256] done synthesizing module 'sync_fifo_fg' (31#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/462e/hdl/lib_fifo_v1_0_rfs.vhd:2246]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_sfifo_autord' (32#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:1295]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_rd_sf' (33#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:20206]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_skid_buf' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:19498]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_skid_buf' (34#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:19498]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_mm2s_full_wrap' (35#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:53565]
+INFO: [Synth 8-638] synthesizing module 'axi_datamover_s2mm_omit_wrap' [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:49597]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover_s2mm_omit_wrap' (36#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:49597]
+INFO: [Synth 8-256] done synthesizing module 'axi_datamover' (37#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/0377/hdl/axi_datamover_v5_1_vh_rfs.vhd:55429]
+INFO: [Synth 8-256] done synthesizing module 'axi_dma' (38#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ipshared/9eb7/hdl/axi_dma_v7_1_vh_rfs.vhd:21849]
+INFO: [Synth 8-256] done synthesizing module 'donkey_kong_axi_dma_0_0' (39#1) [c:/Users/slippman/DonkeyKong/DonkeyKong.srcs/sources_1/bd/donkey_kong/ip/donkey_kong_axi_dma_0_0/synth/donkey_kong_axi_dma_0_0.vhd:104]
+Finished RTL Elaboration : Time (s): cpu = 00:01:56 ; elapsed = 00:01:57 . Memory (MB): peak = 566.625 ; gain = 251.090
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:56 ; elapsed = 00:01:57 . Memory (MB): peak = 566.625 ; gain = 251.090
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 810.148 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:02:07 ; elapsed = 00:02:32 . Memory (MB): peak = 810.148 ; gain = 494.613
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:07 ; elapsed = 00:02:32 . Memory (MB): peak = 810.148 ; gain = 494.613
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:07 ; elapsed = 00:02:32 . Memory (MB): peak = 810.148 ; gain = 494.613
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:02:08 ; elapsed = 00:02:34 . Memory (MB): peak = 810.148 ; gain = 494.613
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:11 ; elapsed = 00:02:37 . Memory (MB): peak = 810.148 ; gain = 494.613
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++-----------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name      | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++-----------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|xpm_memory_base: | gen_wr_a.gen_word_narrow.mem_reg | 512 x 39(NO_CHANGE)    | W |   | 512 x 39(NO_CHANGE)    |   | R | Port A and B     | 0      | 1      | 
++-----------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:20 ; elapsed = 00:02:46 . Memory (MB): peak = 810.148 ; gain = 494.613
+Finished Timing Optimization : Time (s): cpu = 00:02:21 ; elapsed = 00:02:47 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished Technology Mapping : Time (s): cpu = 00:02:22 ; elapsed = 00:02:48 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished IO Insertion : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |CARRY4     |    29|
+|2     |LUT1       |    30|
+|3     |LUT2       |   106|
+|4     |LUT3       |   132|
+|5     |LUT4       |   133|
+|6     |LUT5       |    89|
+|7     |LUT6       |   202|
+|8     |RAMB36E1_1 |     1|
+|9     |SRL16E     |    59|
+|10    |FDR        |     8|
+|11    |FDRE       |   769|
+|12    |FDSE       |    23|
++------+-----------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:23 ; elapsed = 00:02:49 . Memory (MB): peak = 831.953 ; gain = 516.418
+synth_design: Time (s): cpu = 00:02:25 ; elapsed = 00:02:51 . Memory (MB): peak = 831.953 ; gain = 528.941

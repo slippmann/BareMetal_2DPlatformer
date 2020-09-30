@@ -1,0 +1,133 @@
+#include "game_logic.h"
+
+/***********************Global Variables**********************/
+static enum state previousState = GAMEOVER;
+static enum state currentState = MAIN;
+static u8 buttons;
+static u8 num_bones;
+
+static u16 * frame = (u16 *)GAME_BASE_ADDR;
+static struct image * frisk = (struct image *)CONTENT_BASE_ADDR;
+struct position frisk_pos;
+
+/***********************Prototypes*****************************/
+static void ControllerCallback(void * data);
+static void HandleButtons(void);
+static void DrawFrisk(void);
+
+void StartGame(void)
+{
+	SetControllerCallback(ControllerCallback);
+
+	//game loop
+	while (TRUE)
+	{
+		if (currentState != previousState)
+		{
+			switch (currentState)
+			{
+				case MAIN:
+				{
+
+				}
+				case PLAY:
+				{
+
+				}
+				case PAUSE:
+				{
+
+				}
+				case GAMEOVER:
+				{
+
+				}
+				default:
+					return;
+			}
+		}
+
+		HandleButtons();
+
+		DrawFrisk();
+
+		for (int i = 0; i < num_bones; i++)
+		{
+			//DrawBone();
+		}
+	}
+}
+
+enum state GetCurrentState(void)
+{
+	return currentState;
+}
+
+void ControllerCallback(void * data)
+{
+	buttons = (u8) ((u32) data);
+}
+
+void HandleButtons(void)
+{
+	switch (currentState)
+	{
+		case MAIN:
+		{
+			if(buttons & START_MASK)
+			{
+				currentState = PLAY;
+			}
+		}
+		case PLAY:
+		{
+			if (buttons & START_MASK)
+			{
+				currentState = PAUSE;
+			}
+
+			if(buttons & UP_MASK)
+			{
+				//ClimbLadder();
+			}
+			else if (buttons & DOWN_MASK)
+			{
+				//ClimbLadder();
+			}
+			else if (buttons & LEFT_MASK)
+			{
+				frisk_pos.x -= 5;
+				xil_printf("frisk(%d, %d)\r\n");
+			}
+			else if (buttons & RIGHT_MASK)
+			{
+				frisk_pos.x += 5;
+				xil_printf("frisk(%d, %d)\r\n");
+			}
+
+			if(buttons & A_MASK)
+			{
+				//Jump();
+			}
+			else if (buttons & B_MASK)
+			{
+				//UsePowerup();
+			}
+		}
+		case PAUSE:
+		{
+
+		}
+		case GAMEOVER:
+		{
+
+		}
+		default:
+			return;
+	}
+}
+
+void DrawFrisk(void)
+{
+	DrawSprite(frame, frisk, frisk_pos.x, frisk_pos.y);
+}

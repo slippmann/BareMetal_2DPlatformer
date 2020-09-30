@@ -1,0 +1,581 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Mon Apr  2 20:07:41 2018
+| Host         : ensc-pit-30 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file donkey_kong_wrapper_methodology_drc_routed.rpt -pb donkey_kong_wrapper_methodology_drc_routed.pb -rpx donkey_kong_wrapper_methodology_drc_routed.rpx
+| Design       : donkey_kong_wrapper
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 108
++-----------+----------+----------------------------------------------------+------------+
+| Rule      | Severity | Description                                        | Violations |
++-----------+----------+----------------------------------------------------+------------+
+| TIMING-4  | Warning  | Invalid primary clock redefinition on a clock tree | 1          |
+| TIMING-6  | Warning  | No common primary clock between related clocks     | 1          |
+| TIMING-7  | Warning  | No common node between related clocks              | 1          |
+| TIMING-8  | Warning  | No common period between related clocks            | 1          |
+| TIMING-16 | Warning  | Large setup violation                              | 96         |
+| TIMING-18 | Warning  | Missing input or output delay                      | 7          |
+| TIMING-27 | Warning  | Invalid primary clock on hierarchical pin          | 1          |
++-----------+----------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst/clk_in1 is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Warning
+No common primary clock between related clocks  
+The clocks clk_fpga_0 and clk_out1_clk_wiz_0 are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_clk_wiz_0]
+Related violations: <none>
+
+TIMING-7#1 Warning
+No common node between related clocks  
+The clocks clk_fpga_0 and clk_out1_clk_wiz_0 are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks clk_fpga_0] -to [get_clocks clk_out1_clk_wiz_0]
+Related violations: <none>
+
+TIMING-8#1 Warning
+No common period between related clocks  
+The clocks clk_fpga_0 and clk_out1_clk_wiz_0 are found related (timed together) but have no common (expandable) period
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -2.136 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[0]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[8]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -2.145 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[0]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[40]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -2.186 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[15]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[55]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -2.195 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[15]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[23]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -2.215 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[12]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[52]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -2.233 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[12]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[20]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -2.286 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[21]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[61]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -2.299 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[3]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[43]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -2.301 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[21]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[29]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -2.318 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[3]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[11]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -2.328 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[17]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[57]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -2.332 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[16]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[56]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -2.342 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[16]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[24]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -2.343 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[17]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[25]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -2.435 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[19]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[59]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -2.453 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[19]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[27]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -2.550 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[4]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[44]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -2.559 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[4]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[12]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -2.596 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[23]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[63]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -2.616 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[23]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[31]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -2.891 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[2]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[42]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -2.910 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[2]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[10]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -3.145 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[10]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[50]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -3.161 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[10]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[18]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -3.252 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[6]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[46]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -3.272 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[6]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[14]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -3.362 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[20]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[60]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -3.378 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[20]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[28]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -3.496 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[5]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[45]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -3.516 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[5]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[13]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -3.568 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/vsync_sig_reg/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -3.632 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/hsync_sig_reg/D (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#33 Warning
+Large setup violation  
+There is a large setup violation of -3.686 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[10]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#34 Warning
+Large setup violation  
+There is a large setup violation of -3.686 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[12]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#35 Warning
+Large setup violation  
+There is a large setup violation of -3.686 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[2]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#36 Warning
+Large setup violation  
+There is a large setup violation of -3.686 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[3]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#37 Warning
+Large setup violation  
+There is a large setup violation of -3.686 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[6]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#38 Warning
+Large setup violation  
+There is a large setup violation of -3.686 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/vid_out_sig_reg/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#39 Warning
+Large setup violation  
+There is a large setup violation of -3.687 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[10]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#40 Warning
+Large setup violation  
+There is a large setup violation of -3.687 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[1]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#41 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/B_sig_reg[2]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#42 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/B_sig_reg[3]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#43 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/G_sig_reg[0]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#44 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/G_sig_reg[1]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#45 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/G_sig_reg[2]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#46 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/G_sig_reg[3]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#47 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/R_sig_reg[2]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#48 Warning
+Large setup violation  
+There is a large setup violation of -3.691 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/R_sig_reg[3]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#49 Warning
+Large setup violation  
+There is a large setup violation of -3.707 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[13]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[53]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#50 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[13]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#51 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[14]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#52 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[15]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#53 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[3]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#54 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[4]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#55 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[5]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#56 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[6]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#57 Warning
+Large setup violation  
+There is a large setup violation of -3.721 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[8]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#58 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[13]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[21]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#59 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[0]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#60 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[11]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#61 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[12]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#62 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[2]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#63 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[7]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#64 Warning
+Large setup violation  
+There is a large setup violation of -3.723 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/v_count_reg[9]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#65 Warning
+Large setup violation  
+There is a large setup violation of -3.726 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/B_sig_reg[0]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#66 Warning
+Large setup violation  
+There is a large setup violation of -3.726 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/B_sig_reg[1]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#67 Warning
+Large setup violation  
+There is a large setup violation of -3.726 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/R_sig_reg[0]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#68 Warning
+Large setup violation  
+There is a large setup violation of -3.726 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/R_sig_reg[1]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#69 Warning
+Large setup violation  
+There is a large setup violation of -3.734 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[13]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#70 Warning
+Large setup violation  
+There is a large setup violation of -3.734 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[1]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#71 Warning
+Large setup violation  
+There is a large setup violation of -3.734 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[7]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#72 Warning
+Large setup violation  
+There is a large setup violation of -3.734 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[8]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#73 Warning
+Large setup violation  
+There is a large setup violation of -3.753 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[14]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[54]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#74 Warning
+Large setup violation  
+There is a large setup violation of -3.768 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[14]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[22]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#75 Warning
+Large setup violation  
+There is a large setup violation of -3.803 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[8]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[48]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#76 Warning
+Large setup violation  
+There is a large setup violation of -3.819 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[8]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[16]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#77 Warning
+Large setup violation  
+There is a large setup violation of -3.841 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[18]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[58]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#78 Warning
+Large setup violation  
+There is a large setup violation of -3.858 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[18]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[26]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#79 Warning
+Large setup violation  
+There is a large setup violation of -4.000 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[9]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[49]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#80 Warning
+Large setup violation  
+There is a large setup violation of -4.014 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[9]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[17]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#81 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[0]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#82 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[11]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#83 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[14]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#84 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[15]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#85 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[4]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#86 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[5]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#87 Warning
+Large setup violation  
+There is a large setup violation of -4.093 ns between donkey_kong_i/axi_dma_0/U0/I_RST_MODULE/GEN_RESET_FOR_MM2S.RESET_I/GNE_SYNC_RESET.prmry_reset_out_n_reg/C (clocked by clk_fpga_0) and donkey_kong_i/AXI_VGA_0/U0/VGA/h_count_reg[9]/R (clocked by clk_out1_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#88 Warning
+Large setup violation  
+There is a large setup violation of -4.170 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[1]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[9]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#89 Warning
+Large setup violation  
+There is a large setup violation of -4.180 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[1]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[41]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#90 Warning
+Large setup violation  
+There is a large setup violation of -4.252 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[11]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[51]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#91 Warning
+Large setup violation  
+There is a large setup violation of -4.267 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[11]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[19]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#92 Warning
+Large setup violation  
+There is a large setup violation of -4.384 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[7]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[47]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#93 Warning
+Large setup violation  
+There is a large setup violation of -4.402 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[7]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[15]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#94 Warning
+Large setup violation  
+There is a large setup violation of -4.637 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/sample_clk_48k_d3_48_reg__0/C (clocked by zed_audio_clk_48M) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/sample_clk_48k_d4_100_reg/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#95 Warning
+Large setup violation  
+There is a large setup violation of -4.866 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[22]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[62]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#96 Warning
+Large setup violation  
+There is a large setup violation of -4.916 ns between donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/hphone_l_freeze_100_reg[22]/C (clocked by clk_fpga_0) and donkey_kong_i/axi_audio_codec_0/U0/axi_audio_codec_v1_0_S00_AXIS_inst_1/Inst_adau1761_izedboard/Inst_i2s_data_interface/sr_out_reg[30]/D (clocked by zed_audio_clk_48M). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on Button[0] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on Button[1] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on Button[2] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on Button[3] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on Button[4] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on Button[5] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on Button[6] relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-27#1 Warning
+Invalid primary clock on hierarchical pin  
+A primary clock donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst/clk_in1 is created on an inappropriate internal pin donkey_kong_i/AXI_VGA_0/U0/clock_switch/inst/clk_in1. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+
